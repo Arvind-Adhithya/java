@@ -1,0 +1,47 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+
+public class biginteger {
+	public static void main (String[] args) {
+		//code
+		Scanner s=new Scanner(System.in);
+		int t=s.nextInt();
+		while(t>0)
+		{
+		    BigInteger x=s.nextBigInteger();
+		    BigInteger y=s.nextBigInteger();
+		    BigInteger x1=x;
+		    
+		    BigInteger sum=x.add(y);
+		    BigInteger y1=sum;
+		    BigInteger temp=new BigInteger("10");
+		    BigInteger zero=new BigInteger("0");
+		    int count1=0,count2=0;
+		    while(x.divide(temp).compareTo(zero)>0)
+		    {
+		        x=x.divide(temp);
+		        count1++;
+		        
+		    }
+		    while(sum.divide(temp).compareTo(zero)>0)
+		    {
+		        sum=sum.divide(temp);
+		        count2++;
+		        
+		    }
+		    if(count1==count2)
+		    {
+		        System.out.println(y1);
+		    }
+		    else
+		    {
+		        System.out.println(x1);
+		    }
+		    t--;
+	
+		}
+	}
+}
