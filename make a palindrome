@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+      String str = s.nextLine();
+      int[] arr = new int[26];
+      Arrays.fill(arr, 0);
+      for(int i = 0; i < str.length(); i++) {
+        arr[str.charAt(i)-97]++;
+      }
+      int count = 0;
+      for(int i = 0; i < 26; i++) {
+        if(arr[i] % 2 == 1)
+        count++;
+      }
+      if(str.length() % 2 == 1)
+      System.out.println(count-1);
+      else
+      System.out.println(count);
+    }
+    
+}
