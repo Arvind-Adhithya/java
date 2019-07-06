@@ -1,0 +1,44 @@
+import java.util.*;
+public class Main
+{
+    public static void isValid(char[] ch)
+    {
+        Stack<Character> st=new Stack<Character>();
+        for(int i=0;i<ch.length;i++)
+		    {
+		        if((ch[i]=='{'|| (ch[i]=='[') || ch[i]=='('))
+		        {
+		            st.push(ch[i]);
+		           
+		        }
+		        else if((ch[i]=='}')&&(st.peek()=='{'))
+		        {
+		            st.pop();
+		        }
+		        else if((ch[i]==']')&&(st.peek()=='['))
+		        {
+		            st.pop();
+		        }
+		        else if((ch[i]==')')&&(st.peek()=='('))
+		        {
+		            st.pop();
+		        }
+		    }
+		    if(st.isEmpty())
+		    System.out.println("Balanced");
+		    else
+		    System.out.println("Un-Balanced");
+    }
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		String str=s.nextLine();
+		char[] ch=str.toCharArray();
+		Main ob=new Main();
+		
+		if((ch[0]=='}')|| (ch[0]==']') || (ch[0]==')'))
+		System.out.println("invalid");
+		else{
+		    ob.isValid(ch);
+		}
+	}
+}
